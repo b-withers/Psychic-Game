@@ -1,7 +1,7 @@
 // start of logic for game
 var completter = "";
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
-var guessesleft = 9;
+var guessesleft = 10;
 var guessedletters = [];
 var wins = 1;
 var losses = 1;
