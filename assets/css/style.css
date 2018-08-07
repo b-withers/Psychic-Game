@@ -7,10 +7,30 @@ body{
 }
 
 .jumbotron{
+	height: 120%;
 	background-image: url(../images/psyc.gif);
-	background-size: auto;
-	min-height: 266px;
+	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-color:black !important;
+}
+
+#lettersGuessed{
+	font-size: 30px;
+	color: yellow;
+}
+
+#guesses-left{
+	font-size: 30px;
+	color: rgb(32, 103, 255);
+}
+
+#wins{
+	font-size: 30px;
+	color: greenyellow;
+}
+
+#losses{
+	font-size: 30px;
+	color: red;
 }
