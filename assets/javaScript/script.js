@@ -44,9 +44,9 @@ if (guessesleft === 0){
 //function to reset game after win/loss
 function resetgame(){
 	completter = alphabet[Math.floor(Math.random() * alphabet.length)];
-	console.log(completter)
-	guessesleft=9
-	guessedletters=[]
+	console.log(completter);
+	guessesleft=10;
+	guessedletters=[];
 	document.getElementById("lettersGuessed").innerHTML = guessedletters;
 	document.getElementById("guesses-left").innerHTML =  guessesleft;
 }
