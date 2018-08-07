@@ -1,5 +1,3 @@
-
-
 // start of logic for game
 var completter = "";
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -13,9 +11,8 @@ completter = alphabet[Math.floor(Math.random() * alphabet.length)];
 //logs computer picked letter
 console.log(completter);
 
- 
 document.onkeyup = function(event) {
-console.log(event)
+console.log(event);
 //display guess on screen, add to existing guesses
 guessedletters.push(event.key);
 document.getElementById("lettersGuessed").innerHTML = guessedletters;
@@ -37,15 +34,12 @@ else {
 if (guessesleft === 0){
         console.log("loss");
         document.getElementById("losses").innerHTML = losses ++;
-        alert("HAHA! You are out of Guesses!")
+        alert("HAHA! You are out of Guesses!");
          	resetgame();
          }
 }
 
 };
-
-
-
 
 //function to reset game after win/loss
 function resetgame(){
