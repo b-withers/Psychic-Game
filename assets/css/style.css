@@ -2,8 +2,9 @@
 
 body{
 	font-family: 'Kirang Haerang', cursive;
+	background-color: black;
+	color: white;
 }
-
 
 .jumbotron{
 	background-image: url(../images/psyc.gif);
