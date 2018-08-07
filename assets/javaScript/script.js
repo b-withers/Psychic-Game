@@ -1,11 +1,12 @@
+
+
+// start of logic for game
 var completter = "";
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
 var guessesleft = 9;
 var guessedletters = [];
 var wins = 1;
 var losses = 1;
-
-
 
 //computer picking the number:
 completter = alphabet[Math.floor(Math.random() * alphabet.length)];

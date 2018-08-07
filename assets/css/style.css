@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Kirang+Haerang');
+
+body{
+	font-family: 'Kirang Haerang', cursive;
+}
+
+
+.jumbotron{
+	background-image: url(../images/psyc.gif);
+	background-size: auto;
+	min-height: 266px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color:black !important;
+}
