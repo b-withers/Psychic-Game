@@ -11,6 +11,9 @@
 		<!--External CSS-->
     <link rel="stylesheet" href="./assets/css/style.css">
 
+   
+
+
     <title>PSYCHIC</title>
   </head>
 <body>
@@ -38,14 +41,33 @@
 <h3>Wins:</h3><p id="wins"></p>
 <h3>Losses:</h3><p id="losses"></p>
 </div>
+
 <br>
 <br>
+<br>
 
-
-
-<div class="buttons-wrap">
-<div id="buttons" class="col-md-12 text-center"></div>
+<div class="container text-center">
+    <input class="btn btn-dark" type="button" value="keyboard" id="btnShowHide"/>
 </div>
+    
+   <br>
+
+<div id="divShowHide">
+  <div id="bt" class="buttons-wrap">
+    <div id="buttons" class="col-md-12 text-center">
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#btnShowHide").click(function(){
+      $("#divShowHide").fadeToggle("swing, 9000");
+    });
+  });
+</script>
 
 <script src="./assets/javaScript/script.js"></script>
 <!-- <script src="./assets/javaScript/jquerybtn.js"></script> -->

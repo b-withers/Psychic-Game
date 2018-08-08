@@ -57,8 +57,7 @@ if (guessesleft === 0){
 		//game is reset by the resetgame function (below)
          	resetgame();
          }
-}
-
+	}
 };
 
 //function to reset game after win/loss
@@ -71,17 +70,6 @@ function resetgame(){
 	document.getElementById("guesses-left").innerHTML =  guessesleft;
 }
 
-
-$(document).ready(function() {
-//Add click event to the letter buttons
-$(".letter-button").on("click", function(){
-  push.play();
-  console.log(this);       
-})
-});
-
-
-
 //creates the buttons on the screen
 function createLetterButtons() {
     for (var i=0; i<alphabet.length; i++) {
@@ -92,6 +80,20 @@ function createLetterButtons() {
       $("#buttons").append(letterBtn);
     }
 };
+
+
+
+$(document).ready(function() {
+//Add click event to the letter buttons
+$(".letter-button").on("click", function(){
+  push.play();
+  console.log(this);       
+	})
+});
+
+
+
+
 
 
 
