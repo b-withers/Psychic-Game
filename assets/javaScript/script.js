@@ -1,4 +1,5 @@
-
+var win = new Audio('assets/sounds/no.mp3');
+var lose = new Audio('assets/sounds/laugh.wav');
 // start of logic for game
 var completter = "";
 var alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -23,7 +24,7 @@ console.log(guessedletters);
 if (event.key===completter){
 	console.log("win");
 	document.getElementById("wins").innerHTML = wins ++;
-	alert("WHAT!? Inconceivable!");
+	win.play();
 	resetgame();
 }
 
@@ -35,7 +36,7 @@ else {
 if (guessesleft === 0){
         console.log("loss");
         document.getElementById("losses").innerHTML = losses ++;
-        alert("HAHA! You are out of Guesses!");
+        lose.play();
          	resetgame();
          }
 }
@@ -51,5 +52,4 @@ function resetgame(){
 	document.getElementById("lettersGuessed").innerHTML = guessedletters;
 	document.getElementById("guesses-left").innerHTML =  guessesleft;
 }
-
 
