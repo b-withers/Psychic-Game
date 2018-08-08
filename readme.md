@@ -32,3 +32,5 @@
 <li>Hints on how close you are to level</li>
 <li>Percentage of times won / lost</li>
 </ul>
+
+<img src="/assets/images/psy.gif">
