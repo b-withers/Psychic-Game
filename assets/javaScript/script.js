@@ -20,83 +20,92 @@ completter = alphabet[Math.floor(Math.random() * alphabet.length)];
 //logs computer picked letter
 console.log(completter);
 //keyboard event registering letter pressed on keyboard
-document.onkeyup = function(event) {
-//console log the key pressed
-console.log(event);
-//display guess on screen, add to existing guesses
-guessedletters.push(event.key);
-//adds guessed letter to screen
-document.getElementById("lettersGuessed").innerHTML = guessedletters;
-console.log(guessedletters);
-//compare event.key with completter, if it is the same as the completter the following happens
-if (event.key===completter){
-	//simply says win in console
-	console.log("win");
-	//if user guesses letter correctly, 1 point (wins ++) is added to the wins div
-	document.getElementById("wins").innerHTML = wins ++;
-	//win sound is played from variable above
-	win.play();
-	//game is reset by the resetgame function (below)
-	resetgame();
-}
 
-//if the "if" statement is not ture, we run the following "else"
-else {
-	//subtract 1 from the guessesleft variable set to 10 guesses above
-	guessesleft --;
-	//we get the "guesses-left" ID on our HTML and apply the above
-		document.getElementById("guesses-left").innerHTML = guessesleft;
-//when guess left gets to zero, games ends
-//the following is checked, is guessesleft = 0?	if so, run the following	
-if (guessesleft === 0){
-	//console.log "loss"
-		console.log("loss");
-		//add 1 to the "losses" ID on our HTML
-		document.getElementById("losses").innerHTML = losses ++;
-		//play the lose sound var from above
-		lose.play();
+document.onkeyup = function (event) { //this function fires letterSelected()
+	letterSelected(event.key)
+}
+//console log the key pressed
+//display guess on screen, add to existing guesses
+//adds guessed letter to screen
+//compare event.key with completter, if it is the same as the completter the following happens
+
+function letterSelected(letter) {
+
+	push.play();
+
+	if(guessedletters.indexOf(letter) > -1){
+		alert("Letter already guessed.")
+		return
+	}
+
+	guessedletters.push(letter)
+	document.getElementById("lettersGuessed").innerHTML = guessedletters
+
+	if (letter === completter) {
+		//simply says win in console
+		console.log("win");
+		//if user guesses letter correctly, 1 point (wins ++) is added to the wins div
+		document.getElementById("wins").innerHTML = wins++;
+		//win sound is played from variable above
+		win.play();
 		//game is reset by the resetgame function (below)
-         	resetgame();
-         }
+		resetgame();
+	}
+
+	//if the "if" statement is not ture, we run the following "else"
+	else {
+		//subtract 1 from the guessesleft variable set to 10 guesses above
+		guessesleft--;
+		//we get the "guesses-left" ID on our HTML and apply the above
+		document.getElementById("guesses-left").innerHTML = guessesleft;
+		//when guess left gets to zero, games ends
+		//the following is checked, is guessesleft = 0?	if so, run the following	
+		if (guessesleft === 0) {
+			//console.log "loss"
+			console.log("loss");
+			//add 1 to the "losses" ID on our HTML
+			document.getElementById("losses").innerHTML = losses++;
+			//play the lose sound var from above
+			lose.play();
+			//game is reset by the resetgame function (below)
+			resetgame();
+		}
 	}
 };
 
+
 //function to reset game after win/loss
-function resetgame(){
+function resetgame() {
 	//new random letter is chosen
 	completter = alphabet[Math.floor(Math.random() * alphabet.length)];
 	//console log new letter
 	console.log(completter);
 	//reset number of guesses to `10
-	guessesleft=10;
+	guessesleft = 10;
 	//empty guessed letter array
-	guessedletters=[];
+	guessedletters = [];
 	document.getElementById("lettersGuessed").innerHTML = guessedletters;
-	document.getElementById("guesses-left").innerHTML =  guessesleft;
+	document.getElementById("guesses-left").innerHTML = guessesleft;
 }
 
 //creates the buttons on the screen
 function createLetterButtons() {
-    for (var i=0; i<alphabet.length; i++) {
-      var letterBtn = $("<button>");
-      letterBtn.addClass("letter-button letter letter-button-color");
-      letterBtn.attr("data-letter", alphabet[i]);
-      letterBtn.text(alphabet[i]);
-      $("#buttons").append(letterBtn);
-    }
+	for (var i = 0; i < alphabet.length; i++) {
+		var letterBtn = $("<button>");
+		letterBtn.addClass("letter-button letter letter-button-color");
+		letterBtn.attr("data-letter", alphabet[i]);
+		letterBtn.text(alphabet[i]);
+		$("#buttons").append(letterBtn);
+	}
 };
 
 
 $(document).ready(function () {
-    //Add click event to the letter buttons
-    $(".letter-button").on("click", function (e) {
-        console.log(e.target.textContent);
-        push.play();
+	//Add click event to the letter buttons
 
-        guessedletters.push(e.target.textContent);
-    //adds guessed letter to screen
-        document.getElementById("lettersGuessed").innerHTML = guessedletters;
-    })
+	$(".letter-button").on("click", function (e) { // this function also firesLetterSelected()
+		letterSelected(e.target.textContent)
+	})
 });
 
 
