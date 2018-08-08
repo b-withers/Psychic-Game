@@ -34,3 +34,18 @@ body{
 	font-size: 30px;
 	color: red;
 }
+
+.buttons-wrap {
+	margin: 10px;
+}
+
+.letter-button {
+	padding: 10px 15px;
+}
+
+.letter-button-color{
+	color: rgb(255, 255, 255);
+	background-color: black;
+	border-radius: 25px;
+	font-size: 14px;
+}
