@@ -32,7 +32,7 @@ document.onkeyup = function (event) { //this function fires letterSelected()
 function letterSelected(letter) {
 
 	push.play();
-
+	//doesn't allow user to play some letter twice
 	if(guessedletters.indexOf(letter) > -1){
 		alert("Letter already guessed.")
 		return
