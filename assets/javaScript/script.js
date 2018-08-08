@@ -2,6 +2,7 @@
 var win = new Audio('assets/sounds/no.mp3');
 var lose = new Audio('assets/sounds/laugh.wav');
 var push = new Audio('assets/sounds/push.mp3');
+
 //variables used within the game
 //empty variable for completter
 var completter = "";
@@ -62,9 +63,13 @@ if (guessesleft === 0){
 
 //function to reset game after win/loss
 function resetgame(){
+	//new random letter is chosen
 	completter = alphabet[Math.floor(Math.random() * alphabet.length)];
+	//console log new letter
 	console.log(completter);
+	//reset number of guesses to `10
 	guessesleft=10;
+	//empty guessed letter array
 	guessedletters=[];
 	document.getElementById("lettersGuessed").innerHTML = guessedletters;
 	document.getElementById("guesses-left").innerHTML =  guessesleft;
@@ -82,13 +87,16 @@ function createLetterButtons() {
 };
 
 
+$(document).ready(function () {
+    //Add click event to the letter buttons
+    $(".letter-button").on("click", function (e) {
+        console.log(e.target.textContent);
+        push.play();
 
-$(document).ready(function() {
-//Add click event to the letter buttons
-$(".letter-button").on("click", function(){
-  push.play();
-  console.log(this);       
-	})
+        guessedletters.push(e.target.textContent);
+    //adds guessed letter to screen
+        document.getElementById("lettersGuessed").innerHTML = guessedletters;
+    })
 });
 
 

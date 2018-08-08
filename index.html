@@ -11,20 +11,17 @@
 		<!--External CSS-->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-   
-
-
     <title>PSYCHIC</title>
   </head>
 <body>
-
+<!--This sound should play when page is loaded, semi working, **BUG**-->
     <div id="player">
         <audio autoplay hidden>
-         <source src="assets/sounds/spell.wav" type="audio/mpeg">
+         <source src='assets/sounds/spell.wav' type='audio/mpeg'>
                     If you're reading this, audio isn't supported. 
         </audio>
     </div>
-
+<!--Jumbotraon that holds the main gif, styled in CSS-->
 		<div class="jumbotron jumbotron-fluid">
       <br>
 				<div class="container">
@@ -32,13 +29,19 @@
           <br>
 				</div>
 			</div>
-
+<!--Main div for game content-->
 <div class="container text-center col-md-12">
+  <!--Header, no functionality-->
 <h1>What Letter am I thinking of?</h1>
+<!--Sub Header no functionality-->
 <h2>You have 10 guesses... what is your 1st guess!</h2>
+<!--lettersguessed ID where guessed are displayed-->
 <h3>Guessed Letters:</h3><p id="lettersGuessed"></p>
+<!--guesses-left ID where guesses remaining counts down from 10-->
 <h3>Guesses remaining:</h3><p id="guesses-left"></p>
+<!--wins tallied here-->
 <h3>Wins:</h3><p id="wins"></p>
+<!--losses tallied here-->
 <h3>Losses:</h3><p id="losses"></p>
 </div>
 

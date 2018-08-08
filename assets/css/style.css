@@ -7,7 +7,6 @@ body{
 }
 
 .jumbotron{
-	height: 120%;
 	background-image: url(../images/psyc.gif);
 	background-size: contain;
 	background-position: center;
