@@ -34,3 +34,5 @@
 </ul>
 
 <img src="/assets/images/psy.gif">
+<p>app is mobile responsive using bootstrap and media queries. You can also add the app to your homescreen so it saves the link as an "app" on your homescreen. I hide the gif on mobile, as well as the button to hide the keyboard, this way the entire app fits on the screen.</p>
+<img src="/assets/images/mobile1.jpg"> <img src="/assets/images/mobile2.jpg">
