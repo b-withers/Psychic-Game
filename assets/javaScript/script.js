@@ -99,7 +99,6 @@ function createLetterButtons() {
 	}
 }
 
-
 $(document).ready(function () {
 	//Add click event to the letter buttons
 
@@ -107,10 +106,3 @@ $(document).ready(function () {
 		letterSelected(e.target.textContent);
 	});
 });
-
-
-
-
-
-
-
