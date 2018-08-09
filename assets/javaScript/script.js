@@ -38,7 +38,7 @@ function letterSelected(letter) {
 		return;
 	}
 
-	guessedletters.push(letter)
+	guessedletters.push(letter);
 	document.getElementById("lettersGuessed").innerHTML = guessedletters;
 
 	if (letter === completter) {
@@ -71,7 +71,7 @@ function letterSelected(letter) {
 			resetgame();
 		}
 	}
-};
+}
 
 
 //function to reset game after win/loss
@@ -97,14 +97,14 @@ function createLetterButtons() {
 		letterBtn.text(alphabet[i]);
 		$("#buttons").append(letterBtn);
 	}
-};
+}
 
 
 $(document).ready(function () {
 	//Add click event to the letter buttons
 
 	$(".letter-button").on("click", function (e) { // this function also firesLetterSelected()
-		letterSelected(e.target.textContent)
+		letterSelected(e.target.textContent);
 	});
 });
 
