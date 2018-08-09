@@ -15,22 +15,22 @@ body{
 }
 
 #lettersGuessed{
-	font-size: 30px;
+	font-size: 26px;
 	color: yellow;
 }
 
 #guesses-left{
-	font-size: 30px;
+	font-size: 26px;
 	color: rgb(32, 103, 255);
 }
 
 #wins{
-	font-size: 30px;
+	font-size: 26px;
 	color: greenyellow;
 }
 
 #losses{
-	font-size: 30px;
+	font-size: 26px;
 	color: red;
 }
 
