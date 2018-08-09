@@ -22,8 +22,8 @@ console.log(completter);
 //keyboard event registering letter pressed on keyboard
 
 document.onkeyup = function (event) { //this function fires letterSelected()
-	letterSelected(event.key)
-}
+	letterSelected(event.key);
+};
 //console log the key pressed
 //display guess on screen, add to existing guesses
 //adds guessed letter to screen
@@ -34,12 +34,12 @@ function letterSelected(letter) {
 	push.play();
 	//doesn't allow user to play some letter twice
 	if(guessedletters.indexOf(letter) > -1){
-		alert("Letter already guessed.")
-		return
+		alert("Letter already guessed.");
+		return;
 	}
 
 	guessedletters.push(letter)
-	document.getElementById("lettersGuessed").innerHTML = guessedletters
+	document.getElementById("lettersGuessed").innerHTML = guessedletters;
 
 	if (letter === completter) {
 		//simply says win in console
@@ -105,7 +105,7 @@ $(document).ready(function () {
 
 	$(".letter-button").on("click", function (e) { // this function also firesLetterSelected()
 		letterSelected(e.target.textContent)
-	})
+	});
 });
 
 
